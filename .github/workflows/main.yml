@@ -39,14 +39,10 @@ jobs:
         poetry config virtualenvs.in-project false
         poetry config virtualenvs.path ~/.virtualenvs
 
-    - name: Install dependencies
-      run: poetry install
-      if: steps.cache.outputs.cache-hit != true
-
     - name: Install udify
       run: |
         poetry run python scripts/download_model.py en_udify
-        poetry install -E udify
+        poetry install
       if: steps.cache.outputs.cache-hit != true && matrix.extras == 'udify'
 
     - name: Install elmo
