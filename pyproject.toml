@@ -11,6 +11,9 @@ keywords = [ "spaCy", "nlp", "natural language processing", "udify", "allennlp"]
 [tool.poetry.dependencies]
 python = ">=3.6.1"
 camphr = "^0.6.5"
+allennlp = "^1.0.0"
+boto3 = "^1.14.44"
+unofficial-udify = "^0.2.1"
 
 
 [tool.poetry.dev-dependencies]
@@ -22,10 +25,7 @@ toml = "^0.10.0"
 sphinx = "*"
 doc8 = "*"
 mypy = "*"
-
-[build-system]
-requires = [ "poetry>=1.0.0",]
-build-backend = "poetry.masonry.api"
+black = "^19.10b0"
 
 [tool.isort]
 skip = ".venv/**/*.py"
@@ -35,5 +35,9 @@ include_trailing_comma = true
 known_first_party = "camphr"
 
 [tool.poetry.plugins.spacy_factories]
-udify = "camphr_allennlp.pipelines:Udify.from_nlp"
-elmo = "camphr_allennlp.pipelines:Elmo.from_nlp"
+udify = "camphr_allennlp:Udify.from_nlp"
+elmo = "camphr_allennlp:Elmo.from_nlp"
+[build-system]
+requires = [ "poetry>=1.0.0",]
+build-backend = "poetry.masonry.api"
+
