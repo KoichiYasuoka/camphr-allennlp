@@ -51,8 +51,8 @@ jobs:
 
     - name: Install elmo
       run: |
+        poetry install
         poetry run python scripts/download_model.py en_elmo_medium
-        poetry install -E allennlp
       if: steps.cache.outputs.cache-hit != true && matrix.extras == 'elmo'
 
     - run: poetry run mypy camphr_allennlp
