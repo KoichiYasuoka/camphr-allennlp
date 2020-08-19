@@ -1,16 +1,4 @@
-import os
-from pathlib import Path
-
-import omegaconf
 import pytest
-import sentencepiece as spm
-import torch
-from spacy.vocab import Vocab
-
-from camphr.lang.juman import Japanese as Juman
-from camphr.lang.mecab import Japanese as Mecab
-from camphr.models import create_model
-from camphr.pipelines.transformers.model import TRANSFORMERS_MODEL
 
 
 def pytest_addoption(parser):
