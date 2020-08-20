@@ -133,10 +133,10 @@ description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
 python-versions = "*"
-version = "1.14.44"
+version = "1.14.46"
 
 [package.dependencies]
-botocore = ">=1.17.44,<1.18.0"
+botocore = ">=1.17.46,<1.18.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
@@ -146,7 +146,7 @@ description = "Low-level, data-driven core of boto 3."
 name = "botocore"
 optional = false
 python-versions = "*"
-version = "1.17.44"
+version = "1.17.46"
 
 [package.dependencies]
 docutils = ">=0.10,<0.16"
@@ -163,7 +163,7 @@ description = "spaCy plugin for Transformers, Udify, Elmo, etc."
 name = "camphr"
 optional = false
 python-versions = ">=3.6.1"
-version = "0.6.5"
+version = "0.7.0rc1"
 
 [package.dependencies]
 catalogue = ">=1.0.0,<2.0.0"
@@ -173,21 +173,19 @@ hydra-core = ">=0.11.3,<0.12.0"
 hydra_colorlog = ">=0.1.4,<0.2.0"
 more-itertools = "*"
 pyahocorasick = ">=1.4.0,<2.0.0"
-pytextspan = ">=0.2.2,<0.3"
+pytextspan = ">=0.2.2,<0.4"
 pytokenizations = ">=0.4.8,<0.7"
 scikit-learn = ">=0.22,<0.24"
-spacy = ">=2.2.3,<3.0.0"
+spacy = ">=2.2,<2.4"
 toolz = ">=0.10.0,<0.11.0"
 torch = ">=1.0,<2.0"
 transformers = ">=2.10,<3.0"
 typing-extensions = ">=3.7.4"
 
 [package.extras]
-all = ["allennlp (>=1.0.0,<2.0.0)", "unofficial-udify (>=0.2.1,<0.3.0)", "mojimoji (>=0.0.11,<0.0.12)", "pyknp (>=0.4.2,<0.5)", "mecab-python3 (>=1.0,<1.1)"]
-allennlp = ["allennlp (>=1.0.0,<2.0.0)", "boto3 (>=1.14,<2.0)"]
+all = ["mojimoji (>=0.0.11,<0.0.12)", "pyknp (>=0.4.2,<0.5)", "mecab-python3 (>=1.0,<1.1)"]
 juman = ["mojimoji (>=0.0.11,<0.0.12)", "pyknp (>=0.4.2,<0.5)"]
 mecab = ["mecab-python3 (>=1.0,<1.1)"]
-udify = ["allennlp (>=1.0.0,<2.0.0)", "boto3 (>=1.14,<2.0)", "unofficial-udify (>=0.2.1,<0.3.0)"]
 
 [[package]]
 category = "main"
@@ -844,7 +842,7 @@ description = ""
 name = "pytextspan"
 optional = false
 python-versions = "*"
-version = "0.2.2"
+version = "0.3.0"
 
 [[package]]
 category = "main"
@@ -1395,6 +1393,7 @@ version = "1.12.1"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
+marker = "python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -1405,7 +1404,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "ad9bf40bb79b956ecdac84f9aa6bd646136816bd2a6b1a02c79bede2df51f3a5"
+content-hash = "1d1f32138d89c886fd0a5c8997bf8c6fb3c889db9ea5f5d2d41ed655281f9d64"
 lock-version = "1.0"
 python-versions = ">=3.6.1"
 
@@ -1461,16 +1460,16 @@ blis = [
     {file = "blis-0.4.1.tar.gz", hash = "sha256:d69257d317e86f34a7f230a2fd1f021fd2a1b944137f40d8cdbb23bd334cd0c4"},
 ]
 boto3 = [
-    {file = "boto3-1.14.44-py2.py3-none-any.whl", hash = "sha256:b1936392d1491b4de04a972636c91904ec814519d8847d11e3375d77d5df1b12"},
-    {file = "boto3-1.14.44.tar.gz", hash = "sha256:01d45a986abd81d4b55f5649060fcbc49f6f87deaa508b99367a9d9ea21c0347"},
+    {file = "boto3-1.14.46-py2.py3-none-any.whl", hash = "sha256:1cfbadf41777dade69a3e5eaf1b71d15b4ae616fd94d16a894b692e14319f4a2"},
+    {file = "boto3-1.14.46.tar.gz", hash = "sha256:cc3636828f1677ff93e8b1130c90dfe800187964e33786711450e8653d3f245f"},
 ]
 botocore = [
-    {file = "botocore-1.17.44-py2.py3-none-any.whl", hash = "sha256:1b46ffe1d13922066c873323186cbf97e77c137e08e27039d9d684552ccc4892"},
-    {file = "botocore-1.17.44.tar.gz", hash = "sha256:1f6175bf59ffa068055b65f7d703eb1f748c338594a40dfdc645a6130280d8bb"},
+    {file = "botocore-1.17.46-py2.py3-none-any.whl", hash = "sha256:6b134681c938f00b28424abf4b46fa6034b516d8add3a3f524e2292db61aa070"},
+    {file = "botocore-1.17.46.tar.gz", hash = "sha256:2f15a755b990db13a7a9e06a124c6ca5fa1c4470d76672363024d7f2a6c2566c"},
 ]
 camphr = [
-    {file = "camphr-0.6.5-py3-none-any.whl", hash = "sha256:123f5df9cb2697aa00412f47ca638e08f9e2982a42e1480f95f109c420cfe2a5"},
-    {file = "camphr-0.6.5.tar.gz", hash = "sha256:546160fbee800bc4f91dcea9ffca0c6827edcbefe9a9a9a3f47bc285e9f5e64d"},
+    {file = "camphr-0.7.0rc1-py3-none-any.whl", hash = "sha256:7860fb586adae71c5c5f5e28f4ac12c77bcf47f85bdcef054d9080ae9084c271"},
+    {file = "camphr-0.7.0rc1.tar.gz", hash = "sha256:92f66f9092776b28a224d31cd7a45b3e16947332801eb6f1242c3b16d6e17cb3"},
 ]
 catalogue = [
     {file = "catalogue-1.0.0-py2.py3-none-any.whl", hash = "sha256:584d78e7f4c3c6e2fd498eb56dfc8ef1f4ff738480237de2ccd26cbe2cf47172"},
@@ -1870,16 +1869,16 @@ pytest = [
     {file = "pytest-5.4.3.tar.gz", hash = "sha256:7979331bfcba207414f5e1263b5a0f8f521d0f457318836a7355531ed1a4c7d8"},
 ]
 pytextspan = [
-    {file = "pytextspan-0.2.2-cp36-cp36m-macosx_10_7_x86_64.whl", hash = "sha256:babbb1f9b5607f17e22a23141da107a99a91b98bb35f2287c19f0433b40266e0"},
-    {file = "pytextspan-0.2.2-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:7d0509a62de44793fa1cb8b7a46dadff87e2646b1ec96de0c3dbb45108147103"},
-    {file = "pytextspan-0.2.2-cp36-none-win_amd64.whl", hash = "sha256:cd3a0d2df2650ecb8e964243057f3d9c42854e42d92c08bc0ae2de06e854c0ad"},
-    {file = "pytextspan-0.2.2-cp37-cp37m-macosx_10_7_x86_64.whl", hash = "sha256:2bb20fe30b6e5f58c4613907b55b331805206330e6212517fde453bad00ac88a"},
-    {file = "pytextspan-0.2.2-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:c4e8556f1c877348a42714baa861891d69165c315ef8e6bc01f8f494aef8b4ad"},
-    {file = "pytextspan-0.2.2-cp37-none-win_amd64.whl", hash = "sha256:6d31125303114cd72667adc67d9cd77b326afb3cc69ca0f40143a98be891e3b3"},
-    {file = "pytextspan-0.2.2-cp38-cp38-macosx_10_7_x86_64.whl", hash = "sha256:f5537446302e6c26420aaa125af73e296b5e11e64fc86559922007798ab9a50e"},
-    {file = "pytextspan-0.2.2-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:63fca5a135df709f1dfc0f5d4c78fbaeba34a001a43572bab6a6ca2c8b147e72"},
-    {file = "pytextspan-0.2.2-cp38-none-win_amd64.whl", hash = "sha256:a4e979f59b9e1da321343c466af423f217f5fc5f92f208ecf40e585113772c82"},
-    {file = "pytextspan-0.2.2.tar.gz", hash = "sha256:1a02b0fb4f1b9af4ec95f3ae3fde92ff604617fb0eec51d7b9ade45888f89281"},
+    {file = "pytextspan-0.3.0-cp36-cp36m-macosx_10_7_x86_64.whl", hash = "sha256:fc9770d5ca333e6c4a3422d3427d4ad05d490f748d5757fe99b8c94842686376"},
+    {file = "pytextspan-0.3.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:b138a65c9d20051df4a570799d3b4d0aa512f5182701c6ab3384a8678e5f8957"},
+    {file = "pytextspan-0.3.0-cp36-none-win_amd64.whl", hash = "sha256:5326c9c08827bce850885d2e25bac556e1f4ddd366e38b37bade2c3cecef645c"},
+    {file = "pytextspan-0.3.0-cp37-cp37m-macosx_10_7_x86_64.whl", hash = "sha256:67c88d502e41bf81011850ed2e6fcb9addbe2e52d3480dc7dbd578fdbafffee8"},
+    {file = "pytextspan-0.3.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:03f1aa04f46bd55039052230ad7c5efcfa71c5ec075a57b77efe6dadadfcdd97"},
+    {file = "pytextspan-0.3.0-cp37-none-win_amd64.whl", hash = "sha256:a34d9ca82ad72a43dc660cb1b313b0c5c1cfdb845b04b2d7235a8a9ad3683213"},
+    {file = "pytextspan-0.3.0-cp38-cp38-macosx_10_7_x86_64.whl", hash = "sha256:97c5403e28af5882615a037a6142e22c23e7e47522f05ea94d731efe6fd70a1d"},
+    {file = "pytextspan-0.3.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:4363b0380d34f953245563a7ac71f3e8a1869ba52b22818bbc83aacea4c90baf"},
+    {file = "pytextspan-0.3.0-cp38-none-win_amd64.whl", hash = "sha256:5c42f794417a691ce800c96426e874dfa2024e292e1fb0474077ffdedf14cbe6"},
+    {file = "pytextspan-0.3.0.tar.gz", hash = "sha256:5b392cbc3cdb46aa10a836e1b9e338fab5ebcac2a09194c9b562832dfe32268e"},
 ]
 python-dateutil = [
     {file = "python-dateutil-2.8.1.tar.gz", hash = "sha256:73ebfe9dbf22e832286dafa60473e4cd239f8592f699aa5adaf10050e6e1823c"},
