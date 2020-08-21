@@ -77,13 +77,12 @@ description = "Classes Without Boilerplate"
 name = "attrs"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "19.3.0"
+version = "20.1.0"
 
 [package.extras]
-azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "pytest-azurepipelines"]
-dev = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "pre-commit"]
-docs = ["sphinx", "zope.interface"]
-tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
+dev = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "sphinx", "sphinx-rtd-theme", "pre-commit"]
+docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
+tests = ["coverage (>=5.0.2)", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
 
 [[package]]
 category = "dev"
@@ -133,10 +132,10 @@ description = "The AWS SDK for Python"
 name = "boto3"
 optional = false
 python-versions = "*"
-version = "1.14.46"
+version = "1.14.47"
 
 [package.dependencies]
-botocore = ">=1.17.46,<1.18.0"
+botocore = ">=1.17.47,<1.18.0"
 jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
@@ -146,16 +145,13 @@ description = "Low-level, data-driven core of boto 3."
 name = "botocore"
 optional = false
 python-versions = "*"
-version = "1.17.46"
+version = "1.17.47"
 
 [package.dependencies]
 docutils = ">=0.10,<0.16"
 jmespath = ">=0.7.1,<1.0.0"
 python-dateutil = ">=2.1,<3.0.0"
-
-[package.dependencies.urllib3]
-python = "<3.4.0 || >=3.5.0"
-version = ">=1.20,<1.26"
+urllib3 = ">=1.20,<1.26"
 
 [[package]]
 category = "main"
@@ -163,7 +159,7 @@ description = "spaCy plugin for Transformers, Udify, Elmo, etc."
 name = "camphr"
 optional = false
 python-versions = ">=3.6.1"
-version = "0.7.0rc1"
+version = "0.7.0"
 
 [package.dependencies]
 catalogue = ">=1.0.0,<2.0.0"
@@ -176,7 +172,7 @@ pyahocorasick = ">=1.4.0,<2.0.0"
 pytextspan = ">=0.2.2,<0.4"
 pytokenizations = ">=0.4.8,<0.7"
 scikit-learn = ">=0.22,<0.24"
-spacy = ">=2.2,<2.4"
+spacy = ">=2.2,<3"
 toolz = ">=0.10.0,<0.11.0"
 torch = ">=1.0,<2.0"
 transformers = ">=2.10,<3.0"
@@ -1404,7 +1400,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "1d1f32138d89c886fd0a5c8997bf8c6fb3c889db9ea5f5d2d41ed655281f9d64"
+content-hash = "7f0dc99535d3ab8c3cd7d8362f4b030e9f27abf61eb3f080cc20514e862cd3fc"
 lock-version = "1.0"
 python-versions = ">=3.6.1"
 
@@ -1430,8 +1426,8 @@ atomicwrites = [
     {file = "atomicwrites-1.4.0.tar.gz", hash = "sha256:ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a"},
 ]
 attrs = [
-    {file = "attrs-19.3.0-py2.py3-none-any.whl", hash = "sha256:08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c"},
-    {file = "attrs-19.3.0.tar.gz", hash = "sha256:f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"},
+    {file = "attrs-20.1.0-py2.py3-none-any.whl", hash = "sha256:2867b7b9f8326499ab5b0e2d12801fa5c98842d2cbd22b35112ae04bf85b4dff"},
+    {file = "attrs-20.1.0.tar.gz", hash = "sha256:0ef97238856430dcf9228e07f316aefc17e8939fc8507e18c6501b761ef1a42a"},
 ]
 babel = [
     {file = "Babel-2.8.0-py2.py3-none-any.whl", hash = "sha256:d670ea0b10f8b723672d3a6abeb87b565b244da220d76b4dba1b66269ec152d4"},
@@ -1460,16 +1456,15 @@ blis = [
     {file = "blis-0.4.1.tar.gz", hash = "sha256:d69257d317e86f34a7f230a2fd1f021fd2a1b944137f40d8cdbb23bd334cd0c4"},
 ]
 boto3 = [
-    {file = "boto3-1.14.46-py2.py3-none-any.whl", hash = "sha256:1cfbadf41777dade69a3e5eaf1b71d15b4ae616fd94d16a894b692e14319f4a2"},
-    {file = "boto3-1.14.46.tar.gz", hash = "sha256:cc3636828f1677ff93e8b1130c90dfe800187964e33786711450e8653d3f245f"},
+    {file = "boto3-1.14.47-py2.py3-none-any.whl", hash = "sha256:0d9cbeb5c8ca67650cc963c77e2e3b3ab5dffeeee16e03d61d740755f8fc7c44"},
+    {file = "boto3-1.14.47.tar.gz", hash = "sha256:df73edf3bd6f191870212e04ae9a8bc6245fd6749f464e9fb950392a8d15bd8c"},
 ]
 botocore = [
-    {file = "botocore-1.17.46-py2.py3-none-any.whl", hash = "sha256:6b134681c938f00b28424abf4b46fa6034b516d8add3a3f524e2292db61aa070"},
-    {file = "botocore-1.17.46.tar.gz", hash = "sha256:2f15a755b990db13a7a9e06a124c6ca5fa1c4470d76672363024d7f2a6c2566c"},
+    {file = "botocore-1.17.47.tar.gz", hash = "sha256:eca25f01c503c2b86b394497f875a0eb0d3fe367dbc032f3a02851ba7e827109"},
 ]
 camphr = [
-    {file = "camphr-0.7.0rc1-py3-none-any.whl", hash = "sha256:7860fb586adae71c5c5f5e28f4ac12c77bcf47f85bdcef054d9080ae9084c271"},
-    {file = "camphr-0.7.0rc1.tar.gz", hash = "sha256:92f66f9092776b28a224d31cd7a45b3e16947332801eb6f1242c3b16d6e17cb3"},
+    {file = "camphr-0.7.0-py3-none-any.whl", hash = "sha256:7c0414d97c88076f4f468739152fa700d6b8334791c21fe93d158bded41992b4"},
+    {file = "camphr-0.7.0.tar.gz", hash = "sha256:0395d8e0e6bdcc1c3c65c8e4a9f6ee2200cf13edfacca3bf1ac614324d4d6cdf"},
 ]
 catalogue = [
     {file = "catalogue-1.0.0-py2.py3-none-any.whl", hash = "sha256:584d78e7f4c3c6e2fd498eb56dfc8ef1f4ff738480237de2ccd26cbe2cf47172"},
