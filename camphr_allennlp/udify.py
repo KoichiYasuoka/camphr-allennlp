@@ -62,7 +62,7 @@ def load_udify(
 
 
 @spacy.component(
-    "udify", assigns=["token.lemma", "token.dep", "token.pos", "token.head"]
+    "udify", assigns=["token.lemma", "token.dep", "token.pos", "token.head", "token.tag"]
 )
 class Udify(AllennlpPipe):
     @staticmethod
@@ -100,14 +100,16 @@ class Udify(AllennlpPipe):
                     f"Model words: {words}"
                 )
 
-            for token, dep, upos, lemma in zip(
+            for token, dep, upos, lemma, feats in zip(
                 sent,
                 output[UdifyOUTPUTS.predicted_dependencies],
                 output[UdifyOUTPUTS.upos],
                 output[UdifyOUTPUTS.lemmas],
+                output[UdifyOUTPUTS.feats],
             ):
                 token.dep_ = dep
                 token.lemma_ = lemma
                 token.pos_ = upos
+                token.tag_ = feats 
             sent = set_heads(sent, output[UdifyOUTPUTS.predicted_heads])
             sent.doc.is_parsed = True
