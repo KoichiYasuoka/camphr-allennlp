@@ -5,15 +5,14 @@ from typing import Dict, Iterable, Optional, Tuple
 
 import spacy
 import spacy.language
+from camphr.errors import Errors
+from camphr.pipelines.utils import flatten_docs_to_sents, set_heads
+from camphr.types import Pathlike
 from spacy.language import Language
 from spacy.pipeline.pipes import Sentencizer
 from spacy.tokens import Doc
 
-from camphr.types import Pathlike
-
-from camphr.errors import Errors
 from .allennlp_base import VALIDATION, AllennlpPipe
-from camphr.pipelines.utils import flatten_docs_to_sents, set_heads
 
 
 def load_udify_pipes(
@@ -62,7 +61,8 @@ def load_udify(
 
 
 @spacy.component(
-    "udify", assigns=["token.lemma", "token.dep", "token.pos", "token.head"]
+    "udify",
+    assigns=["token.lemma", "token.dep", "token.pos", "token.head", "token.tag"],
 )
 class Udify(AllennlpPipe):
     @staticmethod
@@ -100,14 +100,16 @@ class Udify(AllennlpPipe):
                     f"Model words: {words}"
                 )
 
-            for token, dep, upos, lemma in zip(
+            for token, dep, upos, lemma, feats in zip(
                 sent,
                 output[UdifyOUTPUTS.predicted_dependencies],
                 output[UdifyOUTPUTS.upos],
                 output[UdifyOUTPUTS.lemmas],
+                output[UdifyOUTPUTS.feats],
             ):
                 token.dep_ = dep
                 token.lemma_ = lemma
                 token.pos_ = upos
+                token.tag_ = feats
             sent = set_heads(sent, output[UdifyOUTPUTS.predicted_heads])
             sent.doc.is_parsed = True
