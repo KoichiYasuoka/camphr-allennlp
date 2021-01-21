@@ -9,7 +9,7 @@ tag = true
 
 [tool.poetry]
 name = "camphr_allennlp"
-version = "0.1.2"
+version = "0.1.3"
 description = "AllenNLP plugin for camphr"
 authors = [ "Yohei Tamura <tamuhey@gmail.com>",]
 repository = "https://github.com/PKSHATechnology-Research/camphr-allennlp"
