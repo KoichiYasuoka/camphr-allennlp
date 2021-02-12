@@ -27,7 +27,6 @@ known_first_party = "camphr"
 [tool.poetry.dependencies]
 python = ">=3.6.1"
 camphr = ">=0.7.0,<0.8"
-allennlp = ">=1.0.0,<=1.0.1"
 boto3 = "^1.14.44"
 unofficial-udify = "==0.2.1"
 
