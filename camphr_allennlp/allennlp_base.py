@@ -16,6 +16,11 @@ VALIDATION_DATASET_READER = "validation_dataset_reader"
 DATASET_READER = "dataset_reader"
 ARCHIVE = "archive"
 
+class CamphrUnpickler(pickle.Unpickler):
+    def find_class(self, module, name):
+        if module.startswith("allennlp"):
+             module="camphr_"+module
+        return super().find_class(module, name)
 
 class AllennlpPipe(Pipe):
     """Base class for allennlp Pipe.
@@ -35,8 +40,8 @@ class AllennlpPipe(Pipe):
     ):
         """Construct from `allnlp.Archive`'s file."""
         # Uses lazy import because allennlp is an extra requirements.
-        from allennlp.data import DatasetReader
-        from allennlp.models.archival import load_archive
+        from camphr_allennlp.data import DatasetReader
+        from camphr_allennlp.models.archival import load_archive
 
         archive = load_archive(str(archive_path))
         config = archive.config
@@ -66,7 +71,7 @@ class AllennlpPipe(Pipe):
         archive_path = path / ARCHIVE
         new_self = self.from_archive(archive_path)
         with (path / "cfg.pkl").open("rb") as f:
-            cfg = pickle.load(f)
+            cfg = CamphrUnpickler(f).load()
         self.model = new_self.model
         self.dataset_reader = new_self.dataset_reader
         self.cfg.update(cfg)
