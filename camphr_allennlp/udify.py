@@ -67,7 +67,7 @@ def load_udify(
 class Udify(AllennlpPipe):
     @staticmethod
     def import_udify():
-        from allennlp.common.util import import_module_and_submodules
+        from camphr_allennlp.common.util import import_module_and_submodules
 
         import_module_and_submodules("udify")
 
